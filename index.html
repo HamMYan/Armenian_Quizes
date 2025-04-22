@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hy">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #5c6bc0;
@@ -103,8 +106,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .title {
@@ -136,13 +146,28 @@
       animation: float 3s ease-in-out infinite;
     }
 
-    .title span:nth-child(1) { animation-delay: 0.1s; }
-    .title span:nth-child(2) { animation-delay: 0.2s; }
-    .title span:nth-child(3) { animation-delay: 0.3s; }
+    .title span:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .title span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .title span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     .mode-buttons {
@@ -191,7 +216,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: 0.6s;
       z-index: -1;
     }
@@ -229,8 +254,15 @@
     }
 
     @keyframes cardEnter {
-      0% { opacity: 0; transform: scale(0.98) translateY(10px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
+      0% {
+        opacity: 0;
+        transform: scale(0.98) translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     .question-text {
@@ -271,8 +303,19 @@
     }
 
     @keyframes answerReveal {
-      0% { opacity: 0; max-height: 0; padding: 0 20px; margin-top: 0; }
-      100% { opacity: 1; max-height: 500px; padding: 20px; margin-top: 25px; }
+      0% {
+        opacity: 0;
+        max-height: 0;
+        padding: 0 20px;
+        margin-top: 0;
+      }
+
+      100% {
+        opacity: 1;
+        max-height: 500px;
+        padding: 20px;
+        margin-top: 25px;
+      }
     }
 
     .answer-button {
@@ -312,7 +355,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: 0.5s;
       z-index: -1;
     }
@@ -329,7 +372,7 @@
       border: 2px solid var(--primary-light);
       border-radius: 10px;
       transition: var(--transition);
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       color: var(--text);
     }
 
@@ -350,29 +393,35 @@
     .image-container {
       position: relative;
       width: 100%;
-      max-height: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
       border-radius: 16px;
       margin-bottom: 25px;
       box-shadow: var(--shadow);
-      animation: imageZoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 2px solid var(--primary);
-    }
-
-    @keyframes imageZoomIn {
-      0% { opacity: 0; transform: scale(0.98) rotate(-1deg); }
-      100% { opacity: 1; transform: scale(1) rotate(0); }
+      background-color: rgba(0, 0, 0, 0.05);
     }
 
     .image-container img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      transition: transform 0.8s ease;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
     }
 
-    .image-container:hover img {
-      transform: scale(1.03);
+    @keyframes imageZoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.98) rotate(-1deg);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+      }
     }
 
     .progress-bar {
@@ -400,16 +449,21 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(90deg, 
-        rgba(255,255,255,0.1) 0%, 
-        rgba(255,255,255,0.3) 50%, 
-        rgba(255,255,255,0.1) 100%);
+      background: linear-gradient(90deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          rgba(255, 255, 255, 0.1) 100%);
       animation: progressShine 2s infinite;
     }
 
     @keyframes progressShine {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
     }
 
     .stats {
@@ -435,12 +489,19 @@
       opacity: 0.7;
       z-index: 10;
       pointer-events: none;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
     }
 
     .confetti {
@@ -452,14 +513,27 @@
       animation: confettiFall 4s linear forwards;
       z-index: 1000;
       pointer-events: none;
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
     }
 
     @keyframes confettiFall {
-      0% { transform: translateY(-100vh) rotate(0deg) scale(0.5); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(100vh) rotate(720deg) scale(1); opacity: 0; }
+      0% {
+        transform: translateY(-100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(100vh) rotate(720deg) scale(1);
+        opacity: 0;
+      }
     }
 
     .tabs {
@@ -503,8 +577,13 @@
     }
 
     @keyframes tabUnderline {
-      from { transform: scaleX(0); }
-      to { transform: scaleX(1); }
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
     }
 
     .image-upload-container {
@@ -571,10 +650,25 @@
     }
 
     @keyframes fadeInOut {
-      0% { opacity: 0; transform: translateY(-10px); }
-      10% { opacity: 1; transform: translateY(0); }
-      90% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-10px); }
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      10% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      90% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
     }
 
     .controls-top {
@@ -637,8 +731,13 @@
     }
 
     @keyframes scrollMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 1000px 1000px; }
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 1000px 1000px;
+      }
     }
 
     .crown-icon {
@@ -648,13 +747,20 @@
       transform: translateX(-50%);
       font-size: 2.2rem;
       color: var(--accent);
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
       animation: crownFloat 4s infinite ease-in-out;
     }
 
     @keyframes crownFloat {
-      0%, 100% { transform: translateX(-50%) translateY(0) rotate(-5deg); }
-      50% { transform: translateX(-50%) translateY(-8px) rotate(5deg); }
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(-8px) rotate(5deg);
+      }
     }
 
     .sword-icon {
@@ -665,12 +771,19 @@
       transform: rotate(45deg);
       color: var(--secondary);
       animation: swordGlow 3s infinite alternate;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 
     @keyframes swordGlow {
-      0% { opacity: 0.8; filter: drop-shadow(0 0 5px var(--secondary)); }
-      100% { opacity: 1; filter: drop-shadow(0 0 15px var(--secondary)); }
+      0% {
+        opacity: 0.8;
+        filter: drop-shadow(0 0 5px var(--secondary));
+      }
+
+      100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 15px var(--secondary));
+      }
     }
 
     /* Particle animation */
@@ -688,17 +801,30 @@
       position: absolute;
       width: 2px;
       height: 2px;
-      background: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       animation: particleMove linear infinite;
       filter: blur(0.5px);
     }
 
     @keyframes particleMove {
-      0% { transform: translateY(0) translateX(0); opacity: 0; }
-      10% { opacity: 0.7; }
-      90% { opacity: 0.7; }
-      100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.7;
+      }
+
+      90% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
     }
 
     .fade-in {
@@ -706,43 +832,48 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 768px) {
       .container {
         padding: 25px;
       }
-      
+
       .title {
         font-size: 2.2rem;
       }
-      
+
       .mode-buttons {
         flex-direction: column;
         gap: 15px;
       }
-      
+
       .mode-button {
         width: 100%;
         font-size: 1rem;
         padding: 14px;
         min-width: auto;
       }
-      
+
       .control-buttons {
         flex-direction: column;
       }
-      
+
       .answer-button {
         width: 100%;
       }
-      
+
       .question-text {
         font-size: 1.3rem;
       }
-      
+
       .answer-text {
         font-size: 1.1rem;
       }
@@ -753,6 +884,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="root"></div>
   <audio id="background-music" loop autoplay>
@@ -777,47 +909,46 @@
     // Default questions and images with historical Armenian theme
     const defaultQuestions = [
       { id: 1, question: "Ո՞ր տարում էր Ավարայրի ճակատամարտը:", answer: "451 թ." },
-      { id: 2, question: "Ո՞վ էր հայոց առաջին թագավորը:", answer: "Տիգրան Մեծ" },
-      { id: 3, question: "Ո՞վ էր հայոց այբուբենի ստեղծողը:", answer: "Մեսրոպ Մաշտոց" },
+      { id: 2, question: "Ո՞վ էր Վանի թագավորության առաջին թվագրվող թագավորը:", answer: "Արամե" },
+      { id: 3, question: "Ո՞վ է ստեղծել հայոց տառերը:", answer: "Մեսրոպ Մաշտոց" },
       { id: 4, question: "Ո՞րն էր Հայաստանի մայրաքաղաքը մ.թ.ա. 1-ին դարում:", answer: "Տիգրանակերտ" },
       { id: 5, question: "Ո՞վ էր հայոց վերջին թագավորը Կիլիկիայում:", answer: "Լևոն Զ" },
       { id: 6, question: "Ո՞ր տարում էր Սարդարապատի ճակատամարտը:", answer: "1918 թ." },
       { id: 7, question: "Ո՞վ էր հայկական զորքերի հրամանատարը Ավարայրի ճակատամարտում:", answer: "Վարդան Մամիկոնյան" },
       { id: 8, question: "Ո՞ր դարում ապրել է Գրիգոր Նարեկացին:", answer: "10-րդ դար" },
       { id: 9, question: "Ո՞վ էր հայոց առաջին կաթողիկոսը:", answer: "Գրիգոր Լուսավորիչ" },
-      { id: 10, question: "Ո՞րն է համարվում հայկական պետականության հիմնադիր դինաստիան:", answer: "Հայկազունիներ" }
     ];
 
     const defaultImages = [
-      { 
-        id: 1, 
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Mesrop_Mashtots.jpg/220px-Mesrop_Mashtots.jpg", 
-        answer: "Մեսրոպ Մաշտոց - Հայոց այբուբենի ստեղծող (362-440)" 
+      {
+        id: 1,
+        imageUrl: "https://marineamirjanyan.wordpress.com/wp-content/uploads/2012/09/mashtots.jpg?w=640",
+        answer: "Մեսրոպ Մաշտոց"
       },
-      { 
-        id: 2, 
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Komitas.jpg/220px-Komitas.jpg", 
-        answer: "Կոմիտաս - Հայ մեծ երգահան և երաժշտագետ (1869-1935)" 
+      {
+        id: 2,
+        imageUrl: "https://komitasmuseum.am/wp-content/uploads/bfi_thumb/chvtawylwxzgadqphdqx-scaled-qe7levh1hliwco81orh0yyhb3gd5c5i3d70od9erk0.jpg",
+        answer: "Կոմիտաս"
       },
-      { 
-        id: 3, 
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Martiros_Saryan_1963.jpg/220px-Martiros_Saryan_1963.jpg", 
-        answer: "Մարտիրոս Սարյան - Հայ նշանավոր նկարիչ (1880-1972)" 
+      {
+        id: 3,
+        imageUrl: "https://arevsuk.wordpress.com/wp-content/uploads/2017/11/martiros-saryan.jpg?w=640",
+        answer: "Մարտիրոս Սարյան"
       },
-      { 
-        id: 4, 
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Hovhannes_Shiraz.jpg/220px-Hovhannes_Shiraz.jpg", 
-        answer: "Հովհաննես Շիրազ - Հայ մեծ բանաստեղծ (1915-1984)" 
+      {
+        id: 4,
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS41athv_DpGbztA7zlySH93ZZLNBEfXScx7w&s",
+        answer: "Հովհաննես Շիրազ"
       },
-      { 
-        id: 5, 
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Vahan_Teryan.jpg/220px-Vahan_Teryan.jpg", 
-        answer: "Վահան Տերյան - Հայ բանաստեղծ և հասարակական գործիչ (1885-1920)" 
+      {
+        id: 5,
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRunD51KbnAuqXpF4zYPnHXCqdn7e30lXL4Ow&s",
+        answer: "Վահան Տերյան"
       },
-      { 
-        id: 6, 
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Alexander_Spendiaryan.jpg/220px-Alexander_Spendiaryan.jpg", 
-        answer: "Ալեքսանդր Սպենդիարյան - Հայ կոմպոզիտոր (1871-1928)" 
+      {
+        id: 6,
+        imageUrl: "https://gevorgsayadyan.wordpress.com/wp-content/uploads/2015/06/250px-d5b0d5b8d5bed5b0d5a1d5b6d5b6d5a5d5bd_d5a9d5b8d682d5b4d5a1d5b6d5b5d5a1d5b6.jpg?w=529",
+        answer: "Հովհաննես Թումանյան"
       }
     ];
 
@@ -847,7 +978,7 @@
         if (containerRef.current) {
           const container = containerRef.current;
           const particleCount = Math.floor(window.innerWidth / 10);
-          
+
           for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
@@ -871,7 +1002,7 @@
           animationDuration: Math.random() * 4 + 3
         };
         setFloatingEmojis([...floatingEmojis, newEmoji]);
-        
+
         setTimeout(() => {
           setFloatingEmojis(prev => prev.filter(e => e.id !== newEmoji.id));
         }, 6000);
@@ -889,15 +1020,15 @@
       return (
         <div className={darkMode ? "dark-mode" : ""}>
           <div className="particles" ref={containerRef}></div>
-          
+
           <div className="container">
             <div className="controls-top">
-              <button 
+              <button
                 className={`control-button theme-button ${darkMode ? 'dark' : ''}`}
                 onClick={toggleDarkMode}
                 title={darkMode ? "Light Mode" : "Dark Mode"}
               ></button>
-              <button 
+              <button
                 className={`control-button music-button ${musicOn ? '' : 'music-off'}`}
                 onClick={toggleMusic}
                 title={musicOn ? "Turn off music" : "Turn on music"}
@@ -907,9 +1038,9 @@
             <div className="scroll-animation"></div>
             <div className="crown-icon">👑</div>
             <div className="sword-icon">⚔️</div>
-            
+
             {floatingEmojis.map(emoji => (
-              <div 
+              <div
                 key={emoji.id}
                 className="floating-emoji"
                 style={{
@@ -921,7 +1052,7 @@
                 {emoji.emoji}
               </div>
             ))}
-            
+
             {!mode && (
               <>
                 <h1 className="title">
@@ -990,7 +1121,7 @@
           showSuccess("Խնդրում ենք լրացնել և՛ հարցը, և՛ պատասխանը");
           return;
         }
-        
+
         const newObj = { id: Date.now(), question: newQ, answer: newA };
         setQuestions([...questions, newObj]);
         setNewQ("");
@@ -1003,7 +1134,7 @@
           showSuccess("Չեք կարող ջնջել վերջին հարցը");
           return;
         }
-        
+
         const newQuestions = questions.filter((_, i) => i !== index);
         setQuestions(newQuestions);
         setIndex(Math.min(index, newQuestions.length - 1));
@@ -1018,7 +1149,7 @@
       const createConfetti = () => {
         const colors = ['#5c6bc0', '#ff7043', '#ffab00', '#00c853', '#ff3d00'];
         const newConfetti = [];
-        
+
         for (let i = 0; i < 50; i++) {
           newConfetti.push({
             id: Date.now() + i,
@@ -1028,9 +1159,9 @@
             duration: Math.random() * 3 + 2
           });
         }
-        
+
         setConfetti(newConfetti);
-        
+
         setTimeout(() => {
           setConfetti([]);
         }, 4000);
@@ -1052,9 +1183,9 @@
       return (
         <div className="fade-in">
           <h2 className="title">📜 Հարց ու Պատասխան ռեժիմ</h2>
-          
+
           {confetti.map(c => (
-            <div 
+            <div
               key={c.id}
               className="confetti"
               style={{
@@ -1066,24 +1197,24 @@
               }}
             ></div>
           ))}
-          
+
           <div className="tabs">
-            <div 
+            <div
               className={`tab ${activeTab === "quiz" ? "active" : ""}`}
               onClick={() => setActiveTab("quiz")}
             >
               Վիկտորինա
             </div>
-            <div 
+            <div
               className={`tab ${activeTab === "manage" ? "active" : ""}`}
               onClick={() => setActiveTab("manage")}
             >
               Կառավարում
             </div>
           </div>
-          
+
           {successMessage && <div className="success-message">{successMessage}</div>}
-          
+
           {activeTab === "quiz" && (
             <div className="card">
               <div className="stats">
@@ -1091,20 +1222,20 @@
                 <span>{(index / questions.length * 100).toFixed(0)}% ավարտված</span>
               </div>
               <div className="progress-bar">
-                <div 
-                  className="progress-fill" 
+                <div
+                  className="progress-fill"
                   style={{ width: `${((index + 1) / questions.length) * 100}%` }}
                 ></div>
               </div>
-              
+
               <div className="question-text">{questions[index].question}</div>
-              
+
               {showAnswer && (
                 <div className="answer-text">
                   <strong>Պատասխան.</strong> {questions[index].answer}
                 </div>
               )}
-              
+
               <div className="control-buttons">
                 <button className="answer-button" onClick={() => setShowAnswer(!showAnswer)}>
                   {showAnswer ? "🙈 Թաքցնել պատասխանը" : "👁️ Ցուցադրել պատասխանը"}
@@ -1115,8 +1246,8 @@
                 <button className="answer-button" onClick={next}>
                   Հաջորդ հարց ➡️
                 </button>
-                <button 
-                  className="answer-button" 
+                <button
+                  className="answer-button"
                   onClick={() => {
                     setEditMode(!editMode);
                     setNewQ(questions[index].question);
@@ -1125,30 +1256,30 @@
                 >
                   {editMode ? "✖️ Չեղարկել" : "✏️ Խմբագրել"}
                 </button>
-                <button 
-                  className="answer-button delete-button" 
+                <button
+                  className="answer-button delete-button"
                   onClick={deleteCurrent}
                 >
                   🗑️ Ջնջել հարցը
                 </button>
               </div>
-              
+
               {editMode && (
                 <div style={{ marginTop: '20px' }}>
-                  <input 
-                    className="edit-input" 
-                    placeholder="Նոր հարց" 
-                    value={newQ} 
-                    onChange={e => setNewQ(e.target.value)} 
+                  <input
+                    className="edit-input"
+                    placeholder="Նոր հարց"
+                    value={newQ}
+                    onChange={e => setNewQ(e.target.value)}
                   />
-                  <input 
-                    className="edit-input" 
-                    placeholder="Նոր պատասխան" 
-                    value={newA} 
-                    onChange={e => setNewA(e.target.value)} 
+                  <input
+                    className="edit-input"
+                    placeholder="Նոր պատասխան"
+                    value={newA}
+                    onChange={e => setNewA(e.target.value)}
                   />
-                  <button 
-                    className="answer-button" 
+                  <button
+                    className="answer-button"
                     onClick={updateQuestion}
                     style={{ marginRight: '10px' }}
                   >
@@ -1158,53 +1289,53 @@
               )}
             </div>
           )}
-          
+
           {activeTab === "manage" && (
             <div className="card">
               <h3 style={{ marginBottom: '20px', textAlign: 'center' }}>➕ Ավելացնել Նոր Հարց</h3>
-              <input 
-                className="edit-input" 
-                placeholder="Հարց" 
-                value={newQ} 
-                onChange={e => setNewQ(e.target.value)} 
+              <input
+                className="edit-input"
+                placeholder="Հարց"
+                value={newQ}
+                onChange={e => setNewQ(e.target.value)}
               />
-              <input 
-                className="edit-input" 
-                placeholder="Պատասխան" 
-                value={newA} 
-                onChange={e => setNewA(e.target.value)} 
+              <input
+                className="edit-input"
+                placeholder="Պատասխան"
+                value={newA}
+                onChange={e => setNewA(e.target.value)}
               />
               <div className="control-buttons">
                 <button className="answer-button" onClick={addNew}>
                   ➕ Ավելացնել հարց
                 </button>
-                <button 
-                  className="answer-button rotate-button" 
+                <button
+                  className="answer-button rotate-button"
                   onClick={shuffleQuestions}
                 >
                   🔀 Խառնել հարցերը
                 </button>
-                <button 
-                  className="answer-button delete-button" 
+                <button
+                  className="answer-button delete-button"
                   onClick={resetQuestions}
                 >
                   🔄 Վերականգնել սկզբնականը
                 </button>
               </div>
-              
+
               <h3 style={{ marginTop: '30px', marginBottom: '15px', textAlign: 'center' }}>
                 Հարցերի ցանկ ({questions.length})
               </h3>
-              <div style={{ 
-                maxHeight: '300px', 
-                overflowY: 'auto', 
+              <div style={{
+                maxHeight: '300px',
+                overflowY: 'auto',
                 padding: '10px',
                 background: darkMode ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.05)',
                 borderRadius: '10px'
               }}>
                 {questions.map((q, i) => (
-                  <div 
-                    key={q.id} 
+                  <div
+                    key={q.id}
                     style={{
                       padding: '15px',
                       marginBottom: '10px',
@@ -1220,8 +1351,8 @@
                     }}
                   >
                     <strong>{i + 1}. {q.question}</strong>
-                    <div style={{ 
-                      color: darkMode ? 'var(--dark-light)' : 'var(--text-light)', 
+                    <div style={{
+                      color: darkMode ? 'var(--dark-light)' : 'var(--text-light)',
                       marginTop: '5px',
                       fontSize: '0.9rem'
                     }}>
@@ -1232,7 +1363,7 @@
               </div>
             </div>
           )}
-          
+
           <button className="mode-button" onClick={goBack} style={{ marginTop: '20px' }}>
             <span>⬅️</span> Վերադառնալ
           </button>
@@ -1276,11 +1407,11 @@
       const updateImage = () => {
         const copy = [...images];
         copy[index].answer = newAnswer || copy[index].answer;
-        
+
         if (previewUrl) {
           copy[index].imageUrl = previewUrl;
         }
-        
+
         setImages(copy);
         setEditMode(false);
         setNewAnswer("");
@@ -1292,7 +1423,7 @@
       const handleImageUpload = (e) => {
         const file = e.target.files[0];
         if (!file) return;
-        
+
         setImageFile(file);
         const reader = new FileReader();
         reader.onloadend = () => {
@@ -1306,11 +1437,11 @@
           showSuccess("Խնդրում ենք ավելացնել և՛ նկար, և՛ նկարի նկարագրություն");
           return;
         }
-        
-        const newObj = { 
-          id: Date.now(), 
-          imageUrl: previewUrl, 
-          answer: newAnswer 
+
+        const newObj = {
+          id: Date.now(),
+          imageUrl: previewUrl,
+          answer: newAnswer
         };
         setImages([...images, newObj]);
         setNewAnswer("");
@@ -1324,7 +1455,7 @@
           showSuccess("Չեք կարող ջնջել վերջին նկարը");
           return;
         }
-        
+
         const newImages = images.filter((_, i) => i !== index);
         setImages(newImages);
         setIndex(Math.min(index, newImages.length - 1));
@@ -1343,34 +1474,38 @@
       };
 
       const zoomIn = () => {
-        setZoomLevel(Math.min(zoomLevel + 0.1, 2));
+        setZoomLevel(Math.min(zoomLevel + 0.2, 3));
       };
 
       const zoomOut = () => {
-        setZoomLevel(Math.max(zoomLevel - 0.1, 0.5));
+        setZoomLevel(Math.max(zoomLevel - 0.2, 0.5));
+      };
+
+      const resetZoom = () => {
+        setZoomLevel(1);
       };
 
       return (
         <div className="fade-in">
           <h2 className="title">🖼️ Նկարի Ճանաչում ռեժիմ</h2>
-          
+
           <div className="tabs">
-            <div 
+            <div
               className={`tab ${activeTab === "quiz" ? "active" : ""}`}
               onClick={() => setActiveTab("quiz")}
             >
               Վիկտորինա
             </div>
-            <div 
+            <div
               className={`tab ${activeTab === "manage" ? "active" : ""}`}
               onClick={() => setActiveTab("manage")}
             >
               Կառավարում
             </div>
           </div>
-          
+
           {successMessage && <div className="success-message">{successMessage}</div>}
-          
+
           {activeTab === "quiz" && (
             <div className="card">
               <div className="stats">
@@ -1378,23 +1513,27 @@
                 <span>{(index / images.length * 100).toFixed(0)}% ավարտված</span>
               </div>
               <div className="progress-bar">
-                <div 
-                  className="progress-fill" 
+                <div
+                  className="progress-fill"
                   style={{ width: `${((index + 1) / images.length) * 100}%` }}
                 ></div>
               </div>
-              
+
               <div className="image-container">
-                <img 
-                  src={images[index].imageUrl} 
-                  alt="Հայտնի հայ" 
-                  style={{ transform: `scale(${zoomLevel})` }}
+                <img
+                  src={images[index].imageUrl}
+                  alt="Հայ պատմական նկար"
+                  style={{
+                    transform: `scale(${zoomLevel})`,
+                    maxWidth: "100%",
+                    maxHeight: "100%"
+                  }}
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/400x300?text=Նկարը+բեռնված+չէ';
                   }}
                 />
               </div>
-              
+
               <div className="control-buttons">
                 <button className="answer-button" onClick={zoomIn}>
                   🔍 Մեծացնել
@@ -1402,14 +1541,17 @@
                 <button className="answer-button" onClick={zoomOut}>
                   🔍 Փոքրացնել
                 </button>
+                <button className="answer-button" onClick={resetZoom}>
+                  🔄 Սկզբնական չափ
+                </button>
               </div>
-              
+
               {showAnswer && (
                 <div className="answer-text">
                   <strong>Պատասխան.</strong> {images[index].answer}
                 </div>
               )}
-              
+
               <div className="control-buttons">
                 <button className="answer-button" onClick={() => setShowAnswer(!showAnswer)}>
                   {showAnswer ? "🙈 Թաքցնել պատասխանը" : "👁️ Ցուցադրել պատասխանը"}
@@ -1420,8 +1562,8 @@
                 <button className="answer-button" onClick={next}>
                   Հաջորդ նկար ➡️
                 </button>
-                <button 
-                  className="answer-button" 
+                <button
+                  className="answer-button"
                   onClick={() => {
                     setEditMode(!editMode);
                     setNewAnswer(images[index].answer);
@@ -1429,41 +1571,41 @@
                 >
                   {editMode ? "✖️ Չեղարկել" : "✏️ Խմբագրել"}
                 </button>
-                <button 
-                  className="answer-button delete-button" 
+                <button
+                  className="answer-button delete-button"
                   onClick={deleteCurrent}
                 >
                   🗑️ Ջնջել նկարը
                 </button>
               </div>
-              
+
               {editMode && (
                 <div style={{ marginTop: '20px' }}>
                   <div className="image-upload-container">
                     <label className="image-upload-label">
                       <span>📤 Վերբեռնել նոր նկար</span>
-                      <input 
-                        type="file" 
-                        accept="image/*" 
+                      <input
+                        type="file"
+                        accept="image/*"
                         onChange={handleImageUpload}
                       />
                     </label>
                     {previewUrl && (
-                      <img 
-                        src={previewUrl} 
-                        alt="Preview" 
+                      <img
+                        src={previewUrl}
+                        alt="Preview"
                         className="image-preview"
                       />
                     )}
                   </div>
-                  <input 
-                    className="edit-input" 
-                    placeholder="Նոր նկարի նկարագրություն" 
-                    value={newAnswer} 
-                    onChange={e => setNewAnswer(e.target.value)} 
+                  <input
+                    className="edit-input"
+                    placeholder="Նոր նկարի նկարագրություն"
+                    value={newAnswer}
+                    onChange={e => setNewAnswer(e.target.value)}
                   />
-                  <button 
-                    className="answer-button" 
+                  <button
+                    className="answer-button"
                     onClick={updateImage}
                   >
                     💾 Պահպանել
@@ -1472,42 +1614,42 @@
               )}
             </div>
           )}
-          
+
           {activeTab === "manage" && (
             <div className="card">
               <h3 style={{ marginBottom: '20px', textAlign: 'center' }}>➕ Ավելացնել Նոր Նկար</h3>
-              
+
               <div className="image-upload-container">
                 <label className="image-upload-label">
                   <span>📤 Ընտրել նկար ֆայլից</span>
-                  <input 
-                    type="file" 
-                    accept="image/*" 
+                  <input
+                    type="file"
+                    accept="image/*"
                     onChange={handleImageUpload}
                   />
                 </label>
                 {previewUrl && (
-                  <img 
-                    src={previewUrl} 
-                    alt="Preview" 
+                  <img
+                    src={previewUrl}
+                    alt="Preview"
                     className="image-preview"
                   />
                 )}
               </div>
-              
-              <input 
-                className="edit-input" 
-                placeholder="Նկարի նկարագրություն" 
-                value={newAnswer} 
-                onChange={e => setNewAnswer(e.target.value)} 
+
+              <input
+                className="edit-input"
+                placeholder="Նկարի նկարագրություն"
+                value={newAnswer}
+                onChange={e => setNewAnswer(e.target.value)}
               />
-              
+
               <div className="control-buttons">
                 <button className="answer-button" onClick={addNewImage}>
                   ➕ Ավելացնել նկար
                 </button>
-                <button 
-                  className="answer-button rotate-button" 
+                <button
+                  className="answer-button rotate-button"
                   onClick={() => {
                     setImages([...images].sort(() => Math.random() - 0.5));
                     setIndex(0);
@@ -1516,27 +1658,27 @@
                 >
                   🔀 Խառնել նկարները
                 </button>
-                <button 
-                  className="answer-button delete-button" 
+                <button
+                  className="answer-button delete-button"
                   onClick={resetImages}
                 >
                   🔄 Վերականգնել սկզբնականը
                 </button>
               </div>
-              
+
               <h3 style={{ marginTop: '30px', marginBottom: '15px', textAlign: 'center' }}>
                 Նկարների ցանկ ({images.length})
               </h3>
-              <div style={{ 
-                maxHeight: '300px', 
-                overflowY: 'auto', 
+              <div style={{
+                maxHeight: '300px',
+                overflowY: 'auto',
                 padding: '10px',
                 background: darkMode ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.05)',
                 borderRadius: '10px'
               }}>
                 {images.map((img, i) => (
-                  <div 
-                    key={img.id} 
+                  <div
+                    key={img.id}
                     style={{
                       padding: '15px',
                       marginBottom: '10px',
@@ -1552,12 +1694,12 @@
                     }}
                   >
                     <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-                      <img 
-                        src={img.imageUrl} 
-                        alt="Preview" 
-                        style={{ 
-                          width: '60px', 
-                          height: '60px', 
+                      <img
+                        src={img.imageUrl}
+                        alt="Preview"
+                        style={{
+                          width: '60px',
+                          height: '60px',
                           objectFit: 'cover',
                           borderRadius: '8px',
                           border: '2px solid var(--primary)'
@@ -1568,7 +1710,7 @@
                       />
                       <div>
                         <strong>{i + 1}. Նկար</strong>
-                        <div style={{ 
+                        <div style={{
                           color: darkMode ? 'var(--dark-light)' : 'var(--text-light)',
                           marginTop: '5px',
                           fontSize: '0.9rem'
@@ -1582,7 +1724,7 @@
               </div>
             </div>
           )}
-          
+
           <button className="mode-button" onClick={goBack} style={{ marginTop: '20px' }}>
             <span>⬅️</span> Վերադառնալ
           </button>
@@ -1593,4 +1735,5 @@
     ReactDOM.createRoot(document.getElementById("root")).render(<App />);
   </script>
 </body>
+
 </html>
